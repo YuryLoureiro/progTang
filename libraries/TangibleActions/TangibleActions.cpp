@@ -158,19 +158,17 @@ void Actions::doRobot(void)
             Serial.println("Failed to connect. Make sure remote device is available and in range, then restart app."); 
         }
     }
-    if (SerialBT.disconnect()) {
-        Serial.println("Disconnected Succesfully!");
-    }
-    SerialBT.connect();
 }
 void Actions::doFrente(void)
 {
-    SerialBT.write(45);
+    Serial.println("Frente");
+    SerialBT.println(45);
 }
 
 void Actions::doTras(void)
 {
-    SerialBT.write(65);
+    Serial.println("Tras");
+    SerialBT.println(65);
 }
 
 void Actions::doTurn90(void)

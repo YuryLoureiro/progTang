@@ -45,8 +45,10 @@
 #define GREATER 504
 #define LESS 505
 
+#define ROBO 601
 #define FRENTE 602
 #define TRAS 603
+#define PARAR 604
 
 #define END 999
 
@@ -296,14 +298,6 @@ int ProcessTag::dic(int action, int a[COLUMNS])
         Play.pisca(40);
         break;
 
-    case FRENTE:
-        return doFrente(a);
-        break;
-    
-    case TRAS:
-        return doTras(a);
-        break;
-
     case TURN_90:
         return doTurn90(a);
         break;
@@ -323,6 +317,18 @@ int ProcessTag::dic(int action, int a[COLUMNS])
     case MOVE:
         return doMove(a);
         break;
+    
+    case ROBO:
+    	Play.doRobot();
+    	break;
+    
+    case FRENTE:
+    	Play.doFrente();
+    	break;
+    
+    case TRAS:
+    	Play.doTras();
+    	break;
 
     case DECLARE_X:
     {
